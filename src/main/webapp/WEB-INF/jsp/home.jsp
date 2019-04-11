@@ -11,6 +11,6 @@
     <title>Finance Manager</title>
 </head>
 <body>
-<h1>Hello Friends!</h1>
+<h1>${greeting}</h1>
 </body>
 </html>
