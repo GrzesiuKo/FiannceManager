@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: kopytg
@@ -12,5 +13,13 @@
 </head>
 <body>
 <h1>${greeting}</h1>
+<table>
+    <tr>
+        <button onclick="window.location.href='/finance_manager_war_exploded/addExpense.html'">Go to expense adding!!</button>
+    </tr>
+    <tr>
+
+    </tr>
+</table>
 </body>
 </html>
