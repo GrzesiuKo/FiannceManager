@@ -6,15 +6,15 @@ import javax.validation.constraints.NotNull;
 
 public class Expense {
     @NotNull
-    private Category category;
+    private String category;
     @Range(min = 0,max = 100000000)
     private double cost;
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
