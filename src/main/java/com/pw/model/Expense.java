@@ -1,7 +1,13 @@
 package com.pw.model;
 
+import org.hibernate.validator.constraints.Range;
+
+import javax.validation.constraints.NotNull;
+
 public class Expense {
+    @NotNull
     private Category category;
+    @Range(min = 0,max = 100000000)
     private double cost;
 
     public Category getCategory() {
