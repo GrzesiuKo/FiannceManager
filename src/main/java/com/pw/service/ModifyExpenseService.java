@@ -13,7 +13,6 @@ public class ModifyExpenseService {
 
     public Expense addExpense(Expense expense) {
 
-        expenseRepository.addExpense(expense);
-
+        return expenseRepository.addExpense(expense);
     }
 }

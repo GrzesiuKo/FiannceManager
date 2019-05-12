@@ -2,10 +2,10 @@ package com.pw.model;
 
 import org.hibernate.validator.constraints.Range;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Expense {
-    private Date date;
+    private Timestamp date;
     private int id;
     private String category;
     private String name;
@@ -26,5 +26,29 @@ public class Expense {
 
     public void setMoney(double money) {
         this.money = money;
+    }
+
+    public Timestamp getDate() {
+        return date;
+    }
+
+    public void setDate(Timestamp date) {
+        this.date = date;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

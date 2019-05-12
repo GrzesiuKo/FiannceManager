@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import java.sql.Timestamp;
+import java.util.Date;
 
 @Controller
 public class ModifyExpenseController {
+
     @Autowired
     ModifyExpenseService modifyExpenseService;
 
@@ -30,6 +33,7 @@ public class ModifyExpenseController {
             model.addAttribute("fail_message", "Incorrect Expense Data. Try one more time.");
             return "addExpense";
         }else {
+            expense.setDate(new Timestamp(new Date().getTime()));
             modifyExpenseService.addExpense(expense);
             System.out.println("Added an expense of: "+expense.getMoney()+" category: "+expense.getCategory().toString());
             return "redirect:homesweethome.html";
