@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-public class HomeController {
+public class MenuController {
 
     @RequestMapping(value = "/homesweethome")
     public String welcome(Model model){

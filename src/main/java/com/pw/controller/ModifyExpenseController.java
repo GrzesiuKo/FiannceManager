@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 @Controller
-public class AddExpenseController {
+public class ModifyExpenseController {
     @RequestMapping(value = "/addExpense", method = RequestMethod.GET)
     public String showPage(@ModelAttribute("expense") Expense expense){
         System.out.println("Expense: "+expense.getMoney());
