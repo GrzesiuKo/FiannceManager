@@ -4,6 +4,8 @@ import com.pw.model.Expense;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
@@ -15,10 +17,13 @@ public class ExpenseRepository {
     private JdbcTemplate jdbcTemplate;
 
     public Expense addExpense(final Expense expense) {
+        KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement preparedStatement = connection.prepareStatement("insert INTO expenses(date, category, name, money) values (?,?,?,?,?)", new String[]{"id"});
+                PreparedStatement preparedStatement = connection.prepareStatement("insert INTO expenses(date, category, name, money) values (?,?,?,?)", new String[]{"id"});
+
+                System.out.println("Dane: category "+expense.getCategory()+" name: "+expense.getName()+" money: "+expense.getMoney()+" datetime: "+expense.getDate());
 
                 preparedStatement.setTimestamp(1, expense.getDate());
 
@@ -28,8 +33,12 @@ public class ExpenseRepository {
 
                 return preparedStatement;
             }
-        });
+        }, keyHolder);
 
-        return null;
+        Number id = keyHolder.getKey();
+        return expense;
+
+
     }
+
 }
