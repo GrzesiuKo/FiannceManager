@@ -7,15 +7,15 @@ import java.sql.Date;
 public class Expense {
     private Date date;
     private int id;
-    private Category category;
+    private String category;
     @Range(min = 0,max = 100000000)
     private double money;
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 

@@ -14,6 +14,7 @@
 <body>
 <h1>Add Your Expense!</h1>
 <form:form modelAttribute="expense">
+    ${fail_message}
     <table>
     <tr>
         <td>Enter the money of your Expense: </td>

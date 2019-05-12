@@ -1,7 +1,10 @@
 package com.pw.controller;
 
 import com.pw.model.Expense;
+import com.pw.service.ModifyExpenseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,18 +14,23 @@ import javax.validation.Valid;
 
 @Controller
 public class ModifyExpenseController {
+    @Autowired
+    ModifyExpenseService modifyExpenseService;
+
     @RequestMapping(value = "/addExpense", method = RequestMethod.GET)
-    public String showPage(@ModelAttribute("expense") Expense expense){
-        System.out.println("Expense: "+expense.getMoney());
+    public String getExpense(@ModelAttribute("expense") Expense expense){
         return "addExpense";
     }
 
     @RequestMapping(value = "/addExpense", method = RequestMethod.POST)
-    public String addGoal(@Valid @ModelAttribute("expense") Expense expense, BindingResult result){
+    public String addExpense(@Valid @ModelAttribute("expense") Expense expense, BindingResult result, Model model){
 
         if (result.hasErrors()){
+            System.out.println("Errors while adding Expense "+result.getModel().toString());
+            model.addAttribute("fail_message", "Incorrect Expense Data. Try one more time.");
             return "addExpense";
         }else {
+            modifyExpenseService.addExpense(expense);
             System.out.println("Added an expense of: "+expense.getMoney()+" category: "+expense.getCategory().toString());
             return "redirect:homesweethome.html";
         }
