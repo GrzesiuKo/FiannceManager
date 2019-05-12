@@ -8,6 +8,7 @@ public class Expense {
     private Date date;
     private int id;
     private String category;
+    private String name;
     @Range(min = 0,max = 100000000)
     private double money;
 
