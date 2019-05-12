@@ -13,7 +13,7 @@ import javax.validation.Valid;
 public class AddExpenseController {
     @RequestMapping(value = "/addExpense", method = RequestMethod.GET)
     public String showPage(@ModelAttribute("expense") Expense expense){
-        System.out.println("Expense: "+expense.getCost());
+        System.out.println("Expense: "+expense.getMoney());
         return "addExpense";
     }
 
@@ -23,7 +23,7 @@ public class AddExpenseController {
         if (result.hasErrors()){
             return "addExpense";
         }else {
-            System.out.println("Added an expense of: "+expense.getCost()+" category: "+expense.getCategory().toString());
+            System.out.println("Added an expense of: "+expense.getMoney()+" category: "+expense.getCategory().toString());
             return "redirect:homesweethome.html";
         }
     }

@@ -2,27 +2,28 @@ package com.pw.model;
 
 import org.hibernate.validator.constraints.Range;
 
-import javax.validation.constraints.NotNull;
+import java.sql.Date;
 
 public class Expense {
-    @NotNull
-    private String category;
+    private Date date;
+    private int id;
+    private Category category;
     @Range(min = 0,max = 100000000)
-    private double cost;
+    private double money;
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
-    public double getCost() {
-        return cost;
+    public double getMoney() {
+        return money;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
+    public void setMoney(double money) {
+        this.money = money;
     }
 }

@@ -16,8 +16,8 @@
 <form:form modelAttribute="expense">
     <table>
     <tr>
-        <td>Enter the cost of your Expense: </td>
-        <td><form:input path="cost" id="enteredCost"/></td>
+        <td>Enter the money of your Expense: </td>
+        <td><form:input path="money" id="enteredCost"/></td>
     </tr>
     <tr>
         <td>Enter the category: </td>
