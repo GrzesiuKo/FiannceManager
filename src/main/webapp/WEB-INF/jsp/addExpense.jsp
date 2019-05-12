@@ -14,15 +14,21 @@
 <body>
 <h1>Add Your Expense!</h1>
 <form:form modelAttribute="expense">
+    <table>
     <tr>
         <td>Enter the cost of your Expense: </td>
-        <td><form:input path="cost"/></td>
+        <td><form:input path="cost" id="enteredCost"/></td>
+    </tr>
+    <tr>
+        <td>Enter the category: </td>
+        <td><form:input path="category" id="enteredCategory"/></td>
     </tr>
     <tr>
         <td>
             <input type="submit" value="Confirm the Expense"/>
         </td>
     </tr>
+    </table>
 </form:form>
 </body>
 </html>
