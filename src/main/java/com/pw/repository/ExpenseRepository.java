@@ -1,6 +1,7 @@
 package com.pw.repository;
 
 import com.pw.model.Expense;
+import com.pw.repository.util.ExpenseRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -9,6 +10,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
+import java.util.List;
 
 @Repository("expenseRepository")
 public class ExpenseRepository {
@@ -41,4 +43,8 @@ public class ExpenseRepository {
 
     }
 
+    public List<Expense> getExpenses() {
+        List<Expense> expenses = jdbcTemplate.query("select * from expenses", new ExpenseRowMapper());
+        return expenses;
+    }
 }
