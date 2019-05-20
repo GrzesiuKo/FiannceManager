@@ -60,6 +60,7 @@ public class ExpenseRepository {
     }
 
     public List<Category> getCategories() {
-        return jdbcTemplate.queryForList("Select * from categories", new CategoriesRowMapper());
+        List<Category> categories = jdbcTemplate.query("Select * from categories", new CategoriesRowMapper());
+        return categories;
     }
 }

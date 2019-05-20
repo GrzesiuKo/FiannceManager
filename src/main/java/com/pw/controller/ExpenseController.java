@@ -21,12 +21,19 @@ public class ExpenseController {
     ExpenseService expenseService;
 
     @RequestMapping(value = "/addExpense", method = RequestMethod.GET)
-    public String getExpense(@ModelAttribute("expense") Expense expense){
+    public String getExpense(@ModelAttribute("expense") Expense expense, Model model){
+
+        List<Category> categories = expenseService.getCategories();
+        model.addAttribute("categories", categories);
+
         return "addExpense";
     }
 
     @RequestMapping(value = "/addExpense", method = RequestMethod.POST)
     public String addExpense(@Valid @ModelAttribute("expense") Expense expense, BindingResult result, Model model){
+
+        List<Category> categories = expenseService.getCategories();
+        model.addAttribute("categories", categories);
 
         if (result.hasErrors()){
             System.out.println("Errors while adding Expense "+result.getModel().toString());
@@ -41,13 +48,6 @@ public class ExpenseController {
         }
     }
 
-    @RequestMapping(value = "/expenses", method = RequestMethod.GET)
-    public String getExpenses(Model model){
-        List<Expense> expenses = expenseService.getExpenses();
-        List<Category> categories = expenseService.getCategories();
-        model.addAttribute("expenses", expenses);
-        return "expenses";
-    }
 
     @RequestMapping(value = "/expense/{id}", method = RequestMethod.GET)
     public @ResponseBody Expense getExpense(@PathVariable("id") Integer id){
@@ -69,6 +69,11 @@ public class ExpenseController {
     @RequestMapping("/")
     public String home(){
         return "index";
+    }
+
+    @RequestMapping(value = "/categories", method = RequestMethod.GET)
+    public @ResponseBody List<Category> getCategories(){
+        return expenseService.getCategories();
     }
 
 }

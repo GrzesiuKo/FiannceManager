@@ -26,11 +26,11 @@ public class Expense {
     }
 
     public double getMoney() {
-        return money;
+        return Math.round(money * 100.0) / 100.0;
     }
 
     public void setMoney(double money) {
-        this.money = money;
+        this.money = Math.round(money * 100.0) / 100.0;
     }
 
     public Timestamp getDate() {
