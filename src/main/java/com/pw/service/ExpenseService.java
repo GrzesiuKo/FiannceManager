@@ -1,5 +1,6 @@
 package com.pw.service;
 
+import com.pw.model.Category;
 import com.pw.model.Expense;
 import com.pw.repository.ExpenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +21,17 @@ public class ExpenseService {
 
     public List<Expense> getExpenses() {
         return expenseRepository.getExpenses();
+    }
+
+    public void deleteExpense(Integer id) {
+        expenseRepository.deleteExpense(id);
+    }
+
+    public Expense getExpense(Integer id) {
+        return expenseRepository.getExpense(id);
+    }
+
+    public List<Category> getCategories() {
+        return expenseRepository.getCategories();
     }
 }

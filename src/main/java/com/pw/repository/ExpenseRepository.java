@@ -1,6 +1,8 @@
 package com.pw.repository;
 
+import com.pw.model.Category;
 import com.pw.model.Expense;
+import com.pw.repository.util.CategoriesRowMapper;
 import com.pw.repository.util.ExpenseRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -46,5 +48,18 @@ public class ExpenseRepository {
     public List<Expense> getExpenses() {
         List<Expense> expenses = jdbcTemplate.query("select * from expenses", new ExpenseRowMapper());
         return expenses;
+    }
+
+    public void deleteExpense(Integer id) {
+        jdbcTemplate.update("delete from expenses where id = ?", id);
+    }
+
+    public Expense getExpense(Integer id) {
+        Expense expense = jdbcTemplate.queryForObject("select * from expenses where id=?", new ExpenseRowMapper(), id);
+        return expense;
+    }
+
+    public List<Category> getCategories() {
+        return jdbcTemplate.queryForList("Select * from categories", new CategoriesRowMapper());
     }
 }

@@ -13,7 +13,20 @@
     <title>Current Expenses</title>
 </head>
 <body>
-
+<div>
+    <td>
+        <button onclick="window.location.href='/finance_manager_war_exploded/delete'">
+            I want to delete some!
+        </button>
+    </td>
+</div>
+<div>
+    <td>
+        <button onclick="window.location.href='/finance_manager_war_exploded/'">
+            Home!
+        </button>
+    </td>
+</div>
 <div align="center">
     <table border="1" cellpadding="5">
         <caption><h2>Expenses</h2></caption>

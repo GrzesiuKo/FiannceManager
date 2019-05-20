@@ -1,5 +1,6 @@
 package com.pw.controller;
 
+import com.pw.model.Category;
 import com.pw.model.Expense;
 import com.pw.service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,21 +30,45 @@ public class ExpenseController {
 
         if (result.hasErrors()){
             System.out.println("Errors while adding Expense "+result.getModel().toString());
-            model.addAttribute("fail_message", "Incorrect Expense Data. Try one more time.");
+            model.addAttribute("message", "Incorrect Expense Data. Try one more time.");
             return "addExpense";
         }else {
             expense.setDate(new Timestamp(new Date().getTime()));
             expenseService.addExpense(expense);
             System.out.println("Added an expense of: "+expense.getMoney()+" category: "+expense.getCategory().toString());
-            return "redirect:homesweethome.html";
+            model.addAttribute("message", "Your expense was added.");
+            return "addExpense";
         }
     }
 
     @RequestMapping(value = "/expenses", method = RequestMethod.GET)
     public String getExpenses(Model model){
         List<Expense> expenses = expenseService.getExpenses();
+        List<Category> categories = expenseService.getCategories();
         model.addAttribute("expenses", expenses);
-        System.out.println("Is list empty: "+expenses.isEmpty());
         return "expenses";
     }
+
+    @RequestMapping(value = "/expense/{id}", method = RequestMethod.GET)
+    public @ResponseBody Expense getExpense(@PathVariable("id") Integer id){
+        return expenseService.getExpense(id);
+    }
+
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public String deleteExpense(@ModelAttribute("expense") Expense expense){
+        expenseService.deleteExpense(expense.getId());
+        return "delete";
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String delete(@ModelAttribute("expense") Expense expense){
+        return "delete";
+    }
+
+    @RequestMapping("/")
+    public String home(){
+        return "index";
+    }
+
 }
