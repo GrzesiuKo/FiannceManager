@@ -8,6 +8,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
+<link href="${pageContext.request.contextPath}/resources/style.css" rel="stylesheet">
 <head>
     <title>Delete Expense</title>
 </head>

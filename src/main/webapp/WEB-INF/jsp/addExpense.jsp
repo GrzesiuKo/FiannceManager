@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+
+<link href="${pageContext.request.contextPath}/resources/style.css" rel="stylesheet">
 <head>
     <title>Add Expense</title>
 </head>
