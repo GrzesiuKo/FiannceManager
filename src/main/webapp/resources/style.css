@@ -11,3 +11,8 @@ button {
 tr{
     alignment: center;
 }
+
+table{
+    align-self: center;
+}
+

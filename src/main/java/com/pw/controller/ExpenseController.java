@@ -56,8 +56,15 @@ public class ExpenseController {
 
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    public String deleteExpense(@ModelAttribute("expense") Expense expense){
-        expenseService.deleteExpense(expense.getId());
+    public String deleteExpense(@Valid @ModelAttribute("expense") Expense expense, BindingResult result,  Model model){
+        System.out.println("Wartosć:" + expense.getId());
+        if (result.hasErrors()){
+            model.addAttribute("message", "Expense under this ID was NOT deleted.");
+            System.out.println(result.getAllErrors().toString());
+        }else{
+            model.addAttribute("message", "Expense under ID "+expense.getId()+" was deleted.");
+            expenseService.deleteExpense(expense.getId());
+        }
         return "delete";
     }
 

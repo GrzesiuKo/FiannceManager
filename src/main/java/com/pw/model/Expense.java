@@ -1,7 +1,6 @@
 package com.pw.model;
 
 import org.hibernate.validator.constraints.Range;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
@@ -9,6 +8,7 @@ import java.sql.Timestamp;
 public class Expense {
     private Timestamp date;
     @NotNull
+    @Range
     private int id;
     @NotBlank
     private String category;

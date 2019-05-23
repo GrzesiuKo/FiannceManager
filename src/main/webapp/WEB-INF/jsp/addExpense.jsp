@@ -7,10 +7,12 @@
 <head>
     <title>Add Expense</title>
 </head>
-<body>
-<h1>Add Your Expense!</h1>
-${message}
-<table>
+<body style="background: bisque">
+<h1 align="center">Add Your Expense!</h1>
+
+<h2 align="center" style="color: darkred">${message}</h2>
+
+<table align="center">
     <form:form modelAttribute="expense">
         <tr>
             <td>Enter the money of your Expense:</td>
@@ -44,6 +46,11 @@ ${message}
                 Home Page!!!
             </button>
         </td>
+    </tr>
+    <tr>
+        <td><button onclick="window.location.href='/finance_manager_war_exploded/expenses'">
+            Show me my Expenses
+        </button></td>
     </tr>
 </table>
 

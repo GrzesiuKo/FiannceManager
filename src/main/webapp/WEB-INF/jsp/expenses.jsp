@@ -14,21 +14,21 @@
 <head>
     <title>Current Expenses</title>
 </head>
-<body>
-<div>
+<body style="background: bisque">
+<h1 align="center">History</h1>
+<table align="center">
     <td>
         <button onclick="window.location.href='/finance_manager_war_exploded/delete'">
             I want to delete some!
         </button>
     </td>
-</div>
-<div>
     <td>
         <button onclick="window.location.href='/finance_manager_war_exploded/'">
-            Home!
+            Home
         </button>
     </td>
-</div>
+</table>
+
 <div align="center">
     <table border="1" cellpadding="5">
         <caption><h2>Expenses</h2></caption>
