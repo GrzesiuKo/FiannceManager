@@ -11,6 +11,7 @@
 
             var dps = [[]];
             var chart = new CanvasJS.Chart("chartContainer", {
+                backgroundColor: "#ffe4c4",
                 exportEnabled: true,
                 animationEnabled: true,
                 theme: "light2", // "light1", "dark1", "dark2"
@@ -47,8 +48,8 @@
         }
     </script>
 </head>
-<body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<body style="background: bisque">
+<div id="chartContainer" style="height: 370px; width: 100%"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
-</html>    >
+</html>
