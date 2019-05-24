@@ -34,14 +34,14 @@
     <tr>
         <td>
             <button onclick="window.location.href='/finance_manager_war_exploded/expenses'">
-                I don't remember! I want to check it!
+                "I don't remember. I want to check it."
             </button>
         </td>
     </tr>
     <tr>
         <td>
             <button onclick="window.location.href='/finance_manager_war_exploded/'">
-                Home Page!!!
+                HOME
             </button>
         </td>
     </tr>

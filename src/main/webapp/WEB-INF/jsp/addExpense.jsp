@@ -8,7 +8,7 @@
     <title>Add Expense</title>
 </head>
 <body style="background: bisque">
-<h1 align="center">Add Your Expense!</h1>
+<h1 align="center">Add Your Expense</h1>
 
 <h2 align="center" style="color: darkred">${message}</h2>
 
@@ -33,23 +33,22 @@
 
             </td>
         </tr>
-        <tr>
+        <tr style="alignment: center">
             <td>
-                <input type="submit" value="Confirm the Expense"/>
+                <input style="background: gold" type="submit" value="CONFIRM Expense"/>
             </td>
         </tr>
     </form:form>
 
-    <tr>
+    <tr style="height: 100px">
         <td>
             <button onclick="window.location.href='/finance_manager_war_exploded/'">
-                Home Page!!!
+                HOME
             </button>
         </td>
-    </tr>
-    <tr>
+
         <td><button onclick="window.location.href='/finance_manager_war_exploded/expenses'">
-            Show me my Expenses
+            SHOW Expenses
         </button></td>
     </tr>
 </table>

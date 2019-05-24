@@ -15,25 +15,25 @@
     <table align="center">
         <tr>
             <td>
-                <button onclick="window.location.href='/finance_manager_war_exploded/addExpense'">Add Expense $$$
+                <button onclick="window.location.href='/finance_manager_war_exploded/addExpense'">ADD Expense
                 </button>
             </td>
         </tr>
         <tr>
             <td>
-                <button onclick="window.location.href='/finance_manager_war_exploded/delete'">Delete Expense XXX
+                <button onclick="window.location.href='/finance_manager_war_exploded/delete'">DELETE Expense
                 </button>
             </td>
         </tr>
         <tr>
             <td>
-                <button onclick="window.location.href='/finance_manager_war_exploded/expenses'">Show me Expenses!
+                <button onclick="window.location.href='/finance_manager_war_exploded/expenses'">SHOW History
                 </button>
             </td>
         </tr>
         <tr>
             <td>
-                <button onclick="window.location.href='/finance_manager_war_exploded/statistics'">Show me STATISTICS!
+                <button onclick="window.location.href='/finance_manager_war_exploded/statistics'">SHOW Statistics
                 </button>
             </td>
         </tr>

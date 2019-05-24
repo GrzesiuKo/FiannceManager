@@ -12,26 +12,25 @@
 
 <link href="${pageContext.request.contextPath}/resources/style.css" rel="stylesheet">
 <head>
-    <title>Current Expenses</title>
+    <title>History</title>
 </head>
 <body style="background: bisque">
 <h1 align="center">History</h1>
 <table align="center">
     <td>
         <button onclick="window.location.href='/finance_manager_war_exploded/delete'">
-            I want to delete some!
+            "I want to delete some of them."
         </button>
     </td>
     <td>
         <button onclick="window.location.href='/finance_manager_war_exploded/'">
-            Home
+            HOME
         </button>
     </td>
 </table>
 
 <div align="center">
     <table border="1" cellpadding="5">
-        <caption><h2>Expenses</h2></caption>
         <tr>
             <th>ID</th>
             <th>Date</th>
