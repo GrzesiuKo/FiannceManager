@@ -1,5 +1,6 @@
 package com.pw.controller;
 
+import com.pw.controller.util.IdCarriage;
 import com.pw.model.Category;
 import com.pw.model.Expense;
 import com.pw.service.ExpenseService;
@@ -56,7 +57,7 @@ public class ExpenseController {
 
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    public String deleteExpense(@Valid @ModelAttribute("expense") Expense expense, BindingResult result,  Model model){
+    public String deleteExpense(@Valid @ModelAttribute("expense") IdCarriage expense, BindingResult result, Model model){
         System.out.println("Wartosć:" + expense.getId());
         if (result.hasErrors()){
             model.addAttribute("message", "Expense under this ID was NOT deleted.");
@@ -69,7 +70,7 @@ public class ExpenseController {
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
-    public String delete(@ModelAttribute("expense") Expense expense){
+    public String delete(@ModelAttribute("expense") IdCarriage expense){
         return "delete";
     }
 
