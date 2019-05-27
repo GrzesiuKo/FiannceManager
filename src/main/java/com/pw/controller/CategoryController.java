@@ -2,6 +2,7 @@ package com.pw.controller;
 
 import com.pw.controller.util.CategoryCarriage;
 import com.pw.controller.util.IdCarriage;
+import com.pw.model.Category;
 import com.pw.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class CategoryController {
@@ -33,19 +35,26 @@ public class CategoryController {
     }
 
     @RequestMapping(value = "/deleteCategory", method = RequestMethod.POST)
-    public String deleteExpense(@Valid @ModelAttribute("expense") IdCarriage category, BindingResult result, Model model){
+    public String deleteExpense(@Valid @ModelAttribute("category") IdCarriage category, BindingResult result, Model model){
         if (result.hasErrors()){
             model.addAttribute("message", "Category under this ID was NOT deleted.");
         }else{
             model.addAttribute("message", "Category under ID "+category.getId()+" was deleted.");
             categoryService.deleteCategory(category.getId());
         }
-        return "delete";
+        return "deleteCategory";
     }
 
-    @RequestMapping(value = "/delete", method = RequestMethod.GET)
-    public String delete(@ModelAttribute("expense") IdCarriage expense){
-        return "delete";
+    @RequestMapping(value = "/deleteCategory", method = RequestMethod.GET)
+    public String delete(@ModelAttribute("category") IdCarriage expense){
+        return "deleteCategory";
+    }
+
+    @RequestMapping(value = "/categories", method = RequestMethod.GET)
+    public String getExpenses(Model model){
+        List<Category> categories = categoryService.getCategories();
+        model.addAttribute("categories", categories);
+        return "categories";
     }
 
 }

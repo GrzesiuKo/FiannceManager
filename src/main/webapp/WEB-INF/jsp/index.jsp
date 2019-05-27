@@ -43,6 +43,18 @@
             </button>
         </td>
     </tr>
+    <tr>
+        <td>
+            <button onclick="window.location.href='/finance_manager_war_exploded/deleteCategory'">DELETE Category
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="window.location.href='/finance_manager_war_exploded/categories'">SHOW Categories
+            </button>
+        </td>
+    </tr>
 </table>
 </body>
 </html>

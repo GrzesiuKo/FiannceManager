@@ -1,5 +1,7 @@
 package com.pw.repository;
 
+import com.pw.model.Category;
+import com.pw.repository.util.CategoriesRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 @Repository
 public class CategoryRepository {
@@ -34,5 +37,9 @@ public class CategoryRepository {
 
     public void deleteCategory(int id) {
         jdbcTemplate.update("delete from categories where id = ?", id);
+    }
+    public List<Category> getCategories() {
+        List<Category> categories = jdbcTemplate.query("Select * from categories", new CategoriesRowMapper());
+        return categories;
     }
 }

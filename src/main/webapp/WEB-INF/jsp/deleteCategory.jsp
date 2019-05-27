@@ -11,17 +11,17 @@
 
 <link href="${pageContext.request.contextPath}/resources/style.css" rel="stylesheet">
 <head>
-    <title>Delete Expense</title>
+    <title>Delete Category</title>
 </head>
 <body style="background: bisque">
-<h1>DELETE Your Expense!</h1>
+<h1>DELETE Your Category!</h1>
 
 <h2 align="center" style="color: darkred">${message}</h2>
 <table>
 
-    <form:form modelAttribute="expense">
+    <form:form modelAttribute="category">
         <tr>
-            <td>Enter the ID of your Expense:</td>
+            <td>Enter the ID of your Category:</td>
             <td><form:input path="id" id="enteredID"/></td>
         </tr>
         <tr>
@@ -33,7 +33,7 @@
 
     <tr>
         <td>
-            <button onclick="window.location.href='/finance_manager_war_exploded/expenses'">
+            <button onclick="window.location.href='/finance_manager_war_exploded/categories'">
                 "I don't remember. I want to check it."
             </button>
         </td>
