@@ -11,32 +11,50 @@
 </head>
 
 <body style="background: bisque">
-    <h1 align="center" style="font-size:70px;">Welcome to the Finance Managerrro</h1>
-    <table align="center">
-        <tr>
-            <td>
-                <button onclick="window.location.href='/finance_manager_war_exploded/addExpense'">ADD Expense
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button onclick="window.location.href='/finance_manager_war_exploded/delete'">DELETE Expense
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button onclick="window.location.href='/finance_manager_war_exploded/expenses'">SHOW History
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button onclick="window.location.href='/finance_manager_war_exploded/statistics'">SHOW Statistics
-                </button>
-            </td>
-        </tr>
-    </table>
+<h1 align="center" style="font-size:70px;">Welcome to the Finance Managerrro</h1>
+<table align="center">
+    <tr>
+        <td>
+            <button onclick="window.location.href='/finance_manager_war_exploded/addExpense'">ADD Expense
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="window.location.href='/finance_manager_war_exploded/delete'">DELETE Expense
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="window.location.href='/finance_manager_war_exploded/expenses'">SHOW History
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="window.location.href='/finance_manager_war_exploded/statistics'">SHOW Statistics
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="window.location.href='/finance_manager_war_exploded/addCategory'">ADD Category
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="window.location.href='/finance_manager_war_exploded/deleteCategory'">DELETE Category
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="window.location.href='/finance_manager_war_exploded/categories'">SHOW Categories
+            </button>
+        </td>
+    </tr>
+</table>
 </body>
 </html>

@@ -79,9 +79,4 @@ public class ExpenseController {
         return "index";
     }
 
-    @RequestMapping(value = "/categories", method = RequestMethod.GET)
-    public @ResponseBody List<Category> getCategories(){
-        return expenseService.getCategories();
-    }
-
 }
