@@ -11,7 +11,7 @@
 </head>
 
 <body style="background: bisque">
-<h1 align="center" style="font-size:70px;">Welcome to the Finance Managerrro</h1>
+<h1 align="center" style="font-size:70px;">Welcome to the Finance Manager</h1>
 <table align="center">
     <tr>
         <td>
