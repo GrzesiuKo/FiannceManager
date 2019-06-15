@@ -15,7 +15,7 @@
     <title>History</title>
 </head>
 <body style="background: bisque">
-<h1 align="center">History</h1>
+<h1 align="center">Expenses</h1>
 <table align="center">
     <td>
         <button onclick="window.location.href='/finance_manager_war_exploded/delete'">

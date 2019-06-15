@@ -27,7 +27,7 @@
     </tr>
     <tr>
         <td>
-            <button onclick="window.location.href='/finance_manager_war_exploded/expenses'">SHOW History
+            <button onclick="window.location.href='/finance_manager_war_exploded/expenses'">SHOW Expenses
             </button>
         </td>
     </tr>
