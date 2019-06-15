@@ -33,7 +33,7 @@
 
     <tr>
         <td>
-            <button onclick="window.location.href='/finance_manager_war_exploded/'">
+            <button onclick="window.location.href='/finance_manager_war_exploded/'"> //TODO te scieżki trzeb zmienić na nie absolutne
                 HOME
             </button>
         </td>
